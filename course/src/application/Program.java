@@ -18,22 +18,37 @@ public class Program {
 		System.out.println("==== STUDENT INFORMATION ====");
 		System.out.print("Name: ");
 		st.setName(sc.nextLine());
+		System.out.print("Course Name: ");
+		st.setCourseName(sc.nextLine());
 		System.out.print("Registration Number: ");
 		st.setRegistration(sc.nextLine());
-		System.out.print("Course: ");
-		st.setCourse(sc.nextLine());
 		
-		System.out.print("Enter number Disciplines: ");	
-		int n = sc.nextInt();
+	
 		
-		for (int i=1; i<= n; i++) {
+		for (int i=0; i< st.getDisciplineName().length; i++) {
 			System.out.print("Enter the discipline name " + i + " : ");
-			sc.next();
-			st.setDiscipline(sc.nextLine());
+			st.setDisciplineNamePos(i, sc.next());
 		}
-				
 		
-		System.out.println(st);
+		
+		for (int i=0; i<st.getNotesDisciplines().length; i++){
+            System.out.println("Getting course grades " + st.getDisciplineName()[i]);
+            for (int j=0; j<st.getNotesDisciplines()[i].length; j++){
+                System.out.println("Enter the note " + (j+1));
+                st.setNamePosIJ(i, j, sc.nextDouble());
+            }
+        }
+		
+		
+		st.showInfo();
+        
+        for (int i=0; i<st.getDisciplineName().length; i++){
+            if (st.approved(i)){
+                System.out.println("Discipline " + st.getDisciplineName()[i] + " - was approved");
+            } else {
+                System.out.println("Discipline " + st.getDisciplineName()[i] + " - disapproved");
+            }
+        }
 		
 		
 		sc.close();

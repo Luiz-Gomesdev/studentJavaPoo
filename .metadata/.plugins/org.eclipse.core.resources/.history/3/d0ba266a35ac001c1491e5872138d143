@@ -1,0 +1,80 @@
+package entities;
+
+public class Student {
+	
+	private String name;
+	private String registration;
+	private String course; 
+	private String disciplineOne;
+	private String disciplineTwo;
+	private String disciplineThree;
+	
+	public Student() {
+	}
+	
+	public Student(String name, String registration, String course, String disciplineOne, String disciplineTwo,
+			String disciplineThree) {
+		this.name = name;
+		this.registration = registration;
+		this.course = course;
+		this.disciplineOne = disciplineOne;
+		this.disciplineTwo = disciplineTwo;
+		this.disciplineThree = disciplineThree;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(String registration) {
+		this.registration = registration;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
+	public String getDisciplineOne() {
+		return disciplineOne;
+	}
+
+	public void setDisciplineOne(String disciplineOne) {
+		this.disciplineOne = disciplineOne;
+	}
+
+	public String getDisciplineTwo() {
+		return disciplineTwo;
+	}
+
+	public void setDisciplineTwo(String disciplineTwo) {
+		this.disciplineTwo = disciplineTwo;
+	}
+
+	public String getDisciplineThree() {
+		return disciplineThree;
+	}
+
+	public void setDisciplineThree(String disciplineThree) {
+		this.disciplineThree = disciplineThree;
+	}
+
+	public void approved(double note) {
+		if (note >= 7) {
+			System.out.println("Approved student with grade " + note);
+		}else {
+			System.out.println("Failed student with grade " + note);
+		}
+	}
+}

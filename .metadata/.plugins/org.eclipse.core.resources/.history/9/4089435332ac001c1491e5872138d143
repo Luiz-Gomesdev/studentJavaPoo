@@ -1,0 +1,64 @@
+package entities;
+
+public class Student {
+	
+	private String name;
+	private String registration;
+	private String course; 
+	private String discipline;
+	
+	public Student() {
+	}
+
+	public Student(String name, String registration, String course, String discipline) {
+		this.name = name;
+		this.registration = registration;
+		this.course = course;
+		this.discipline = discipline;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(String registration) {
+		this.registration = registration;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
+	public String getDiscipline() {
+		return discipline;
+	}
+
+	public void setDiscipline(String discipline) {
+		this.discipline = discipline;
+	}
+	
+	public void approved(double note) {
+		if (note >= 7) {
+			System.out.println("Approved student with grade " + note);
+		}else {
+			System.out.println("Failed student with grade " + note);
+		}
+	}
+	
+	
+	
+	
+
+}
